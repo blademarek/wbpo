@@ -3,13 +3,12 @@
 namespace App\Repositories;
 
 use App\Events\TransactionCreated;
-use App\Interfaces\TransactionRepositoryInterface;
 use App\Models\Transaction;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class TransactionRepository implements TransactionRepositoryInterface
+class TransactionRepository
 {
     public function getAllTransactions()
     {
