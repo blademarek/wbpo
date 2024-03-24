@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/payment/link', [PaymentController::class, 'createPaymentLink']);
+
 Route::apiResource('/transactions', TransactionController::class);
