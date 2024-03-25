@@ -29,6 +29,8 @@ services:
             MYSQL_USER: ${DB_USERNAME}
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
+        volumes:
+            - mysql-data:/var/lib/mysql
         networks:
             - wbpo-network
 
@@ -42,6 +44,10 @@ services:
             - ./docker/nginx:/etc/nginx/conf.d/
         networks:
             - wbpo-network
+
+volumes:
+    mysql-data:
+        driver: local
 
 networks:
   wbpo-network:
