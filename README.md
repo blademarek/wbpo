@@ -13,31 +13,36 @@
 
 #### To run this project live, few steps must be followed:
 
-1. Start docker-compose (prerequisite is installed docker)
+1. Copy .env file
     ```
-    docker-compose up
+    cp .env.example .env
     ```
 
-2. Enter application docker container
+2. Start docker compose (prerequisite is installed docker)
+    ```
+    docker compose up
+    ```
+
+3. Enter application docker container
 
     ```
-    docker-compose exec app /bin/bash
+    docker compose exec app /bin/bash
     ```
    Following commands will be run inside `app` container.
 
-3. Install composer packages.
+4. Install composer packages.
 
    ```
    composer install
    ```
 
-4. Generate APP_KEY and store it in .env file
+5. Generate APP_KEY
 
    ```
    php artisan key:generate
    ```
 
-5. Initiate DB, run migrations
+6. Initiate DB, run migrations
 
    ```
    php artisan migrate
