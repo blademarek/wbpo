@@ -17,7 +17,7 @@ class PaymentController extends Controller
 
     public function createPaymentLink(Request $request): JsonResponse
     {
-        $paymentLink = $this->defaultPaymentService->createPaymentLink($request->all());
+        $paymentLink = $this->defaultPaymentService->createPaymentLink();
 
         return response()->json(['payment_link' => $paymentLink]);
     }

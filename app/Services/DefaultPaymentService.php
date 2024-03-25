@@ -6,7 +6,7 @@ use App\Interfaces\PaymentServiceInterface;
 
 class DefaultPaymentService implements PaymentServiceInterface
 {
-    public function createPaymentLink(array $data): string
+    public function createPaymentLink(): string
     {
         return 'https://example.com/payment-link';
     }
