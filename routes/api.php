@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TransactionController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/payment/link', [PaymentController::class, 'createPaymentLink']);
+
+Route::middleware('auth:api')->post('/test', [PaymentController::class, 'createPaymentLink']);
 
 Route::apiResource('/transactions', TransactionController::class);
